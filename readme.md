@@ -30,7 +30,7 @@ Note: a `.woff` file is included in the repo for the default font.
 
 This does **absolutely nothing fancy**.
 
-There are not editable text fields, javascript interactivity or configuration files.
+There are no editable text fields, javascript interactivities or conveinient configuration files.
 
 If you want to customise something just change the `.css` and `.html` in the index file. 
 
@@ -38,4 +38,4 @@ You can submit fancy suggestions as pull requests if you like.
 
 ## Credit
 
-The `.html` and `.css` is heavily based on the Pico-8 online manual.
+The `.html` and `.css` is heavily based on the [Pico-8 online manual](https://www.lexaloffle.com/dl/docs/pico-8_manual.html).
