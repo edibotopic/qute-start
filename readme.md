@@ -30,7 +30,7 @@ Note: a `.woff` file is included in the repo for the default font.
 
 This does **absolutely nothing fancy**.
 
-There are no editable text fields, javascript interactivities or conveinient configuration files.
+There are no editable text fields, javascript interactivities or convenient configuration files.
 
 If you want to customise something just change the `.css` and `.html` in the index file. 
 
