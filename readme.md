@@ -62,7 +62,11 @@ Currently default sections like _Notes_ and _Favourites_ are numbered and hav a 
 
 If you copy and paste _1.1 Simple Start Page_ in the browser and change it to _1.2 My Important Message_ then this will work fine but the Table of Contents will not be updated.
 
+<<<<<<< HEAD
 ### Live-editing on Firefox
+=======
+There are no editable text fields, javascript interactivities or convenient configuration files.
+>>>>>>> cb8c83650d86fc23537f32626077aa8ee1b75347
 
 While this was made specifically for qutebrowser and isn't aiming for cross-browser compatibility this would still ne nice in principle.
 
