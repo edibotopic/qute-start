@@ -35,6 +35,9 @@ Currently, almost all text can be edited in the browser **except for links**.
 When you edit a text element and re-focus on another (or click elsewhere) the current state of the page will be saved to _local storage_.
 Standard shortcuts for copying/pasting, bolding/italicising, etc., should work as normal.
 
+Note: if you want to use keyboard shortcuts on the homepage (e.g., H, J, K, L movement keys in qutebrowser) you must ensure you are not focused on an editable text element.
+Simply click just outside the outline that appears when you are text editing and it should work fine.
+
 You will probably want to create your own page from scratch, however.
 If so, delete mine and rename `template.html` to `index.html`.
 Edit the `index.html` to add different links, styles, etc.
@@ -44,6 +47,9 @@ Edit the `index.html` to add different links, styles, etc.
 I wouldn't advise relying on local storage for highly sensitive notes.
 
 For security, you can periodically `save as` the webpage over the `index.html` to make the changes permanent.
+In qutebrowser you simply need to type `gd` to invoke the *download* command with the homepage open in the active tab.
+A prompt will then ask you to find where you want to download the `index.html`.
+Choose the `/qute-start/` directory and save over the original file.
 
 This functionality might be incorporated as a button in the future if it doesn't clutter the page.
 
