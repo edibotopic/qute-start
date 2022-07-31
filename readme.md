@@ -68,15 +68,15 @@ Should not be too difficult but is not a priority right now.
 
 ### Live-editing for adding new sections
 
-Currently default sections like _Notes_ and _Favourites_ are numbered and hav a corresponding entry in a Table of Contents.
+Currently default sections like _Notes_ and _Favourites_ are numbered and have a corresponding entry in a Table of Contents.
 
 If you copy and paste _1.1 Simple Start Page_ in the browser and change it to _1.2 My Important Message_ then this will work fine but the Table of Contents will not be updated.
 
 ### Live-editing on Firefox
 
-While this was made specifically for qutebrowser and isn't aiming for cross-browser compatibility this would still ne nice in principle.
+While this was made specifically for qutebrowser and isn't aiming for universal cross-browser compatibility this would still be nice in principle.
 
-When testing locally data was not being save to local storage reliably on Firefox but worked fine on Chrome.
+When testing locally data was not being saved to local storage reliably on Firefox but worked fine on Chrome.
 
 ## Credit
 
