@@ -84,10 +84,19 @@ The `html` and `css` is inspired by the lovely [Pico-8 online manual](https://ww
 
 ## Images
 
-### Dark mode on qutebrowser (default text in index.html)
+### Dark mode on qutebrowser
+
+Shown with **darkmode** enabled in browser, **transparent** terminal and **default** text. 
 
 ![Dark mode on qutebrowser](dark_qute.png) 
 
-### Light mode on Chrome (text edits stored locally)
+### Light mode on Firefox
 
-![Light mode on chrome](light_chrome.png) 
+Shown with **lightmode** enabled in browser and **edited text** (title, tasks) that are **saved locally**.
+
+![Light mode on firefox](light_firefox.png) 
+
+## To-do
+
+- [ ] Add instructions for setting in different browsers
+- [ ] Theme support ...?
