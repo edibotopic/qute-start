@@ -2,8 +2,6 @@
 
 A bare bones home page/new tab page that is friendly to light or dark modes.
 
-<!-- TODO: add a picture here -->
-
 Made for personal use and sharing across my own computers.
 
 Developed primarily for use with [https://qutebrowser.org/](qutebrowser) but has been tested with Chrome where it has worked fine.
