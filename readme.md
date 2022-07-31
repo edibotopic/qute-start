@@ -52,7 +52,8 @@ For security, you can periodically `save as` the webpage over the `index.html` t
 ~~A prompt will then ask you to find where you want to download the `index.html`.
 Choose the `/qute-start/` directory and save over the original file.~~
 
-*Note: the above *should* work but resulted in my index.html being cleared completely.*
+*Note: the above *should* work but resulted in my index.html being cleared completely first time around.
+I have since tested again and it worked perfectly, so will try a few more times before recommending.*
 
 This functionality might be incorporated as a button in the future if it doesn't clutter the page.
 
