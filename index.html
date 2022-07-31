@@ -17,16 +17,19 @@
       }
 
       h1 {
+        text-decoration: none;
         font-size: 30pt;
         margin-top: 50px;
         color: #444;
       }
       h2 {
+        text-decoration: none;
         font-size: 18pt;
         margin-top: 30px;
         color: #444;
       }
       h3 {
+        text-decoration: none;
         font-size: 16pt;
         margin-top: 20px;
         color: #444;
@@ -36,6 +39,10 @@
         text-decoration: none;
         color: #222;
         font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
 
       p {
@@ -98,29 +105,16 @@
 
       <p id="toc"></p>
       <hr />
-      <div
-        onclick="el = document.getElementById('contents'); el.style.display = el.style.display == 'none' ? '': 'none';"
-        style="display: inline; cursor: pointer"
-      >
-        [+]
-      </div>
-      <b>Contents</b>: <a href="# Notes"><b>Notes</b></a> |
-      <a href="# Favourites"><b>Favourites</b></a>
-      <div id="contents" style="display: none">
-        <a href="# Notes">1. Notes</a><br />
-        &nbsp;&nbsp;<a href="#_n1">1.1 Simple Start Page</a><br />
-        &nbsp;&nbsp;<a href="#_n2">1.2 Plans for Eleventy Site</a><br />
-        <a href="# Favourites">2. Favourites</a><br />
-        &nbsp;&nbsp;<a href="#_f1">2.1 Non-anglosphere newspapers</a><br />
-        &nbsp;&nbsp;<a href="#_f2">2.2 onehundredrabbits</a><br />
-      </div>
+      <b>Contents</b>: <a href="#Tasks"><b>Tasks</b></a> |
+      <a href="#Notes"><b>Notes</b></a> |
+      <a href="#Favourites"><b>Favourites</b></a>
       <hr />
 
       <!-- tasks -->
 
       <div id="tsk-wrap" contenteditable>
-        <a href="# Tasks"><h3 id="Tasks">&#9640; Tasks</h3> </a>
-        <ul>
+        <h3 id="Tasks">&#9640; Tasks</h3>
+        <ul id="tasklist">
           <li>
             <strong>Writing</strong>: formal methods for multi-phasic systems
             paper
@@ -136,15 +130,12 @@
           </li>
         </ul>
       </div>
+      <button type="button" onclick="newTask()">+</button>
 
       <!-- notes -->
 
-      <div id="nts-wrap" contenteditable>
-        <a href="# Notes"
-          ><h1 id="Notes">
-            <span style="font-size: 30pt">&#x2780;</span> Notes
-          </h1></a
-        >
+      <div id="notes" contenteditable>
+        <h1 id="Notes"><span style="font-size: 30pt">&#x2780;</span> Notes</h1>
 
         <div
           style="
@@ -170,10 +161,10 @@
             background-color: #fff;
           "
         >
-          Add a small few notes that you don't expect to change soon.
+          Add things you want to be reminded of while browsing.
         </p>
 
-        <a href="# n1"><h2 id="_n1">1.1 Simple Start Page</h2></a>
+        <h2 id="_n1">Simple Start Page</h2>
         <p>
           Browser extensions for startpages and newtab pages are slow and busy.
         </p>
@@ -186,19 +177,19 @@
           should be editable as local .txt files.
         </p>
 
-        <a href="# n2"><h2 id="_n2">1.2 Plans for Eleventy Site</h2></a>
+        <h2 id="_n2">Plans for Eleventy Site</h2>
         <p>The site looks pretty good (except on Qutebrowser!).</p>
         <p>My immediate goal is to get up a few more blogpots.</p>
         <p>Then I would like to look at a darkmode and cooklang integration.</p>
       </div>
 
+      <button type="buttton" onclick="newNote()">+</button>
+
       <!-- favourites -->
       <div id="fav-wrap" contenteditable>
-        <a href="# Favourites"
-          ><h1 id="Favourites">
-            <span style="font-size: 30pt">&#x2781;</span> Favourites
-          </h1></a
-        >
+        <h1 id="Favourites">
+          <span style="font-size: 30pt">&#x2781;</span> Favourites
+        </h1>
 
         <div
           style="
@@ -245,10 +236,11 @@
         </p>
       </div>
 
+      <button type="button" onclick="newFav()">+</button>
+
       <script>
         const editables = document.querySelectorAll('[contenteditable]')
 
-        // save edits BUG => not working on firefox!!!
         editables.forEach((el) => {
           el.addEventListener('blur', () => {
             localStorage.setItem('dataStorage-' + el.id, el.innerHTML)
@@ -262,6 +254,36 @@
             document.querySelector('#' + id).innerHTML =
               localStorage.getItem(key)
           }
+        }
+
+        function newTask() {
+          const tk = document.createElement('li')
+          // const text_new = document.createTextNode('<b>This</b> is a new task')
+          tk.innerHTML = '<b>Task Type</b>: nature of the new task'
+          // tk.appendChild(text_new)
+          document.getElementById('tasklist').appendChild(tk)
+        }
+
+        function newNote() {
+          const nt = document.createElement('div')
+          const hd = document.createElement('h2')
+          const header_new = document.createTextNode('Note Header')
+          const text_new = document.createTextNode('Text for new note...')
+          nt.appendChild(hd)
+          hd.appendChild(header_new)
+          nt.appendChild(text_new)
+          document.getElementById('notes').appendChild(nt)
+        }
+
+        function newFav() {
+          const fv = document.createElement('div')
+          const hd = document.createElement('h4')
+          const header_new = document.createTextNode('■ Fav Header')
+          const text_new = document.createTextNode('Text for new favourite...')
+          fv.appendChild(hd)
+          hd.appendChild(header_new)
+          fv.appendChild(text_new)
+          document.getElementById('fav-wrap').appendChild(fv)
         }
       </script>
     </div>

@@ -10,6 +10,7 @@ Developed primarily for use with [qutebrowser](https://qutebrowser.org/) but has
 
 - Minimal text-based interface
 - Live-editable text (_mostly_) with rich editing (bold, italic)
+- Buttons to add new notes and tasks
 - Quote, links, tasks and favourites sections as default
 
 ## Purpose
@@ -28,12 +29,16 @@ c.url.default_page = 'file:///home/user/yourpathto/qute-start/index.html'
 c.url.start_pages = 'file:///home/user/yourpathto/qute-start/index.html'
 ```
 
-Note: it should be possible to something similar on other browsers but I have not checked in detail.
+*Note: it should be possible to do something similar on other browsers but I have not checked in detail.*
 
 The `index.html` is **my** homepage and you will want to customise it.
 Currently, almost all text can be edited in the browser **except for links**.
 When you edit a text element and re-focus on another (or click elsewhere) the current state of the page will be saved to _local storage_.
 Standard shortcuts for copying/pasting, bolding/italicising, etc., should work as normal.
+
+Buttons are included at the end of the *tasks*, *notes* and *favourites* sections.
+Clicking these buttons will add a correctly formatted element that you can edit.
+Again, you must defocus from this element for the changes to persist.
 
 Note: if you want to use keyboard shortcuts on the homepage (e.g., H, J, K, L movement keys in qutebrowser) you must ensure you are not focused on an editable text element.
 Simply click just outside the outline that appears when you are text editing and it should work fine.
