@@ -1,153 +1,223 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <!-- page styles -->
 
-<!-- page styles -->
+    <style type="text/css">
+      @font-face {
+        font-family: 'proggyvector';
+        /* src: url('https://github.com/bluescan/proggyfonts/blob/master/ProggyVector/ProggyVector%20Regular.woff') format('woff'); */
+        src: url('ProggyVector%20Regular.woff') format('woff');
+      }
 
-	<STYLE TYPE="text/css">
+      body {
+        font-size: 10pt;
+        font-family: 'proggyvector', 'Courier New';
+        line-height: 1.6;
+      }
 
-		@font-face {
-		  font-family: 'proggyvector';
-		  /* src: url('https://github.com/bluescan/proggyfonts/blob/master/ProggyVector/ProggyVector%20Regular.woff') format('woff'); */
-		  src: url('ProggyVector%20Regular.woff') format('woff');
-		}
+      h1 {
+        font-size: 30pt;
+        margin-top: 50px;
+        color: #444;
+      }
+      h2 {
+        font-size: 18pt;
+        margin-top: 30px;
+        color: #444;
+      }
+      h3 {
+        font-size: 16pt;
+        margin-top: 20px;
+        color: #444;
+      }
 
-		body{
-			font-size:10pt;
-			font-family : "proggyvector", "Courier New";
-			line-height: 1.6;	
-		}
+      a {
+        text-decoration: none;
+        color: #222;
+        font-weight: bold;
+      }
 
-		h1{
-			font-size:30pt;
-			margin-top: 50px;
-			color:#444;
-		}
-		h2{
-			font-size:18pt;
-			margin-top: 30px;
-			color:#444;
-		}
-		h3{
-			font-size:16pt;
-			margin-top: 20px;
-			color:#444;
-		}
-		h4{
-			font-size:14pt;
-			margin-top: 20px;
-			color:#444;
-		}
-		h5{
-			font-size:12pt;
-			margin-top: 4px;
-			margin-bottom: 4px;
-			color:#444;
-		}
+      p {
+        break-inside: avoid;
+      }
 
-		a{
-			text-decoration:none;
-			color:#222;
-			font-weight:bold;
-		}
+      .box {
+        display: block;
+        break-inside: avoid;
+        width: 90%%;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 24px;
 
-		p{
-			break-inside: avoid; 
-		}
+        border-width: 2px;
+        border-radius: 15px;
+        border-style: solid;
+        border-color: #444;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+  </head>
 
-		.box{
-			display:block;
-			break-inside: avoid;
-			width:90%%;
-			padding:16px;
-			margin-top:16px;
-			margin-bottom:24px;
+  <body spellcheck="false">
+    <!-- welcome message -->
 
-			border-width:2px;
-			border-radius:15px;
-			border-style:solid;
-			border-color:#444;
-			overflow-x:auto;-webkit-overflow-scrolling:touch;
-		}
+    <div>
+      <h1 id="welcome" contenteditable>Your Title</h1>
+    </div>
 
-	</style>
+    <!-- quote -->
 
-</head>
+    <div>
+      <p id="quotes" contenteditable>
+        "An inspirational quote"<br />
+        - author<br />
+      </p>
+    </div>
 
-<body>
+    <!-- links -->
 
-<!-- page content -->
+    <p id="links" title="links must be edited in source file" class="box">
+      <span id="lnks-title" content editable>Places:</span><br />
+      &nbsp;<br />
+      &nbsp; hackernews |
+      <a href="https://news.ycombinator.com">https://news.ycombinator.com</a
+      ><br />
+      &nbsp; GitHub | <a href="https://github.com">https://github.com</a><br />
+      &nbsp; Youtube | <a href="http://youtube.com/">http://youtube.com</a
+      ><br />
+    </p>
 
-<div style="max-width:99vw; width:820px; margin:auto; padding:12px;">
+    <!-- other content -->
 
-<!-- welcome message -->
+    <p id="toc"> <hr><div onclick="el = document.getElementById('contents'); el.style.display = el.style.display == 'none' ? '': 'none';" style="display:inline;cursor:pointer;">[+] </div><b>Contents</b>: <a href="# Notes"><b>Notes</b></a> | <a href="# Favourites"><b>Favourites</b></a></a><div id="contents" style="display:none"></p>
 
-<a href=""><h1 id="Welcome">Your Welcome Message</h1></a>
+      <a href="# Notes">1. Notes</a><br />
+      &nbsp;&nbsp;<a href="#_n1">1.1 First Note</a><br />
+      &nbsp;&nbsp;<a href="#_n2">1.2 Second Note</a><br />
+      <a href="# Favourites">2. Favourites</a><br />
+      &nbsp;&nbsp;<a href="#_f1">2.1 First Favourite</a><br />
+      &nbsp;&nbsp;<a href="#_f2">2.2 Second Favourite</a><br />
+    </div>
+    <hr />
 
-<!-- quote -->
+    <!-- tasks -->
 
-<p>"An inspirational quote"<br>
-- author<br>
-</p>
+    <div id="tsk-wrap" contenteditable>
+      <a href="# Tasks"><h3 id="Tasks">&#9640; Tasks</h3> </a>
+      <ul>
+        <li><strong>Writing</strong>: add your text</li>
+        <li><strong>Social</strong>: add your text</li>
+        <li><strong>Projects</strong>: add your text</li>
+        <li><strong>Development</strong>: add your text</li>
+      </ul>
+    </div>
 
-<!-- links -->
+    <!-- notes -->
 
-<p class="box">Places:<br>
-&nbsp;<br>
-                    &nbsp; hackernews | <a href="https://news.ycombinator.com">https://news.ycombinator.com</a><br>
-                    &nbsp; GitHub | <a href="https://github.com">https://github.com</a><br>
-                    &nbsp; Youtube | <a href="http://youtube.com/">http://youtube.com</a><br>
-</p>
+    <div id="nts-wrap" contenteditable>
+      <a href="# Notes"
+        ><h1 id="Notes">
+          <span style="font-size: 30pt">&#x2780;</span> Notes
+        </h1></a
+      >
 
-<!-- other content -->
+      <div
+        style="
+          display: inline-block;
+          float: left;
+          position: relative;
+          left: -10px;
+          top: 5px;
+          font-size: 16pt;
+          background-color: #fff;
+        "
+      >
+        &#9432;
+      </div>
+      <p
+        style="
+          width: 90%;
+          padding: 16px;
+          border-width: 2px;
+          border-radius: 15px;
+          border-style: dashed;
+          border-color: #aaa;
+          background-color: #fff;
+        "
+      >
+        Add a small few notes that you don't expect to change soon.
+      </p>
 
-<p> <hr><div onclick="el = document.getElementById('contents'); el.style.display = el.style.display == 'none' ? '': 'none';" style="display:inline;cursor:pointer;">[+] </div><b>Contents</b>: <a href="# Notes"><b>Notes</b></a> | <a href="# Favourites"><b>Favourites</b></a></a><div id=contents style="display:none"></p>
+      <a href="#_n1"><h2 id="n1">1.1 Note 1</h2></a>
+      <p>Add a note.</p>
 
-<a href="# Notes">1. Notes</a><br>
-&nbsp;&nbsp;<a href="#_n1">1.1 First note</a><br>
-&nbsp;&nbsp;<a href="#_n2">1.2 Second note</a><br>
-<a href="# Favourites">2. Favourites</a><br>
-&nbsp;&nbsp;<a href="#_f1">2.1 First favourite</a><br>
-&nbsp;&nbsp;<a href="#_f2">2.2 Second favourite</a><br>
+      <a href="#_n2"><h2 id="n2">1.2 Note 2</h2></a>
+      <p>Add a note.</p>
+    </div>
 
-</div><hr>
+    <!-- favourites -->
 
-<!-- tasks -->
+    <div id="fav-wrap" contenteditable>
+      <a href="# Favourites"
+        ><h1 id="Favourites">
+          <span style="font-size: 30pt">&#x2781;</span> Favourites
+        </h1></a
+      >
 
-<a href="# Tasks"><h3 id="Tasks">&#9640; Tasks</h3>
-</a>
-<ul>
-    <li><strong>Writing</strong>: add your task</li>
-    <li><strong>Social</strong>: add your task</li>
-    <li><strong>Projects</strong>: add your task</li>
-    <li><strong>Development</strong>: add your task</li>
-</ul>
+      <div
+        style="
+          display: inline-block;
+          float: left;
+          position: relative;
+          left: -10px;
+          top: 5px;
+          font-size: 16pt;
+          background-color: #fff;
+        "
+      >
+        &#9432;
+      </div>
 
-<!-- notes -->
+      <p
+        style="
+          width: 90%;
+          padding: 16px;
+          border-width: 2px;
+          border-radius: 15px;
+          border-style: dashed;
+          border-color: #aaa;
+          background-color: #fff;
+        "
+      >
+        Add some favourite internet things, places and people here.
+      </p>
 
-<a href="# Notes"><h1 id="Notes"><span style="font-size:48pt">&#x2776;</span> Notes</h1></a>
+      <a href="# f1"><h4 id="_f1">&#9632; Favourite 1</h4></a>
+      <p>Add a favourite.</p>
 
-<div style="display:inline-block; float:left; position:relative; left:-10px; top:5px; font-size:16pt; background-color:#fff">&#9432;</div>
-<p style="width:90%; padding:16px; border-width:2px; border-radius:15px; border-style:dashed; border-color:#aaa; background-color:#fff; ">
+      <a href="# f2"><h4 id="_f2">&#9632; Favourite 2</h4></a>
+      <p>Add a favourite.</p>
+    </div>
 
-Add a small few notes that you don't expect to change soon.</p>
+    <script>
+      const editables = document.querySelectorAll('[contenteditable]')
 
-<a href="#_n1"><h2 id="_n1">1.1  Note 1</h2></a>
-<p>Add a note.</p>
+      // save edits to local storage BUG => not working on firefox!!!
+      editables.forEach((el) => {
+        el.addEventListener('blur', () => {
+          localStorage.setItem('dataStorage-' + el.id, el.innerHTML)
+        })
+      })
 
-<a href="#_n2"><h2 id="_n2">1.2  Note 2</h2></a>
-<p>Add a note.</p>
-
-<!-- favourites -->
-
-<a href="# Favourites"><h1 id="Favourites"><span style="font-size:48pt">&#x2777;</span> Favourites</h1></a>
-
-<div style="display:inline-block; float:left; position:relative; left:-10px; top:5px; font-size:16pt; background-color:#fff">&#9432;</div>
-<p style="width:90%; padding:16px; border-width:2px; border-radius:15px; border-style:dashed; border-color:#aaa; background-color:#fff; ">
-Add some favourite internet things, places and people here.</p>
-
-<a href="# f1"><h4 id="_f1">&#9632; Favourite 1</h4></a>
-<p>Add one of your favourite things on the internet.</p>
-
-<a href="# f2"><h4 id="_f2">&#9632; Favourite 2</h4></a>
-<p>Add one of your favourite things on the internet.</p>
+      // reloading
+      for (var key in localStorage) {
+        if (key.includes('dataStorage-')) {
+          const id = key.replace('dataStorage-', '')
+          document.querySelector('#' + id).innerHTML = localStorage.getItem(key)
+        }
+      }
+    </script>
+  </body>
+</html>
