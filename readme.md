@@ -4,7 +4,7 @@ A bare bones home page/new tab page that is friendly to light or dark modes.
 
 Made for personal use and sharing across my own computers.
 
-Developed primarily for use with [https://qutebrowser.org/](qutebrowser) but has been tested with Chrome where it has worked fine.
+Developed primarily for use with [https://qutebrowser.org/](qutebrowser) but has been tested with Chrome and Firefox where it has also worked fine.
 
 ## Features
 
@@ -74,9 +74,9 @@ If you copy and paste _1.1 Simple Start Page_ in the browser and change it to _1
 
 ### Live-editing on Firefox
 
-While this was made specifically for qutebrowser and isn't aiming for universal cross-browser compatibility this would still be nice in principle.
+~~When testing locally data was not being saved to local storage reliably on Firefox but worked fine on Chrome.~~
 
-When testing locally data was not being saved to local storage reliably on Firefox but worked fine on Chrome.
+Note: this only seems to have been an issue during local development and it seems to work fine on Firefox.
 
 ## Credit
 
