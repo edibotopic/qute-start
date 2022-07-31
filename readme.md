@@ -71,18 +71,6 @@ Pull requests welcome.
 Would be nice to have editable links but this needs to be done in such a way that the hyperlinks remain clickable.
 Should not be too difficult but is not a priority right now.
 
-### Live-editing for adding new sections
-
-Currently default sections like _Notes_ and _Favourites_ are numbered and have a corresponding entry in a Table of Contents.
-
-If you copy and paste _1.1 Simple Start Page_ in the browser and change it to _1.2 My Important Message_ then this will work fine but the Table of Contents will not be updated.
-
-### Live-editing on Firefox
-
-~~When testing locally data was not being saved to local storage reliably on Firefox but worked fine on Chrome.~~
-
-Note: this only seems to have been an issue during local development and it seems to work fine on Firefox.
-
 ## Credit
 
 The `html` and `css` is inspired by the lovely [Pico-8 online manual](https://www.lexaloffle.com/dl/docs/pico-8_manual.html).
