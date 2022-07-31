@@ -47,9 +47,12 @@ Edit the `index.html` to add different links, styles, etc.
 I wouldn't advise relying on local storage for highly sensitive notes.
 
 For security, you can periodically `save as` the webpage over the `index.html` to make the changes permanent.
-In qutebrowser you simply need to type `gd` to invoke the *download* command with the homepage open in the active tab.
-A prompt will then ask you to find where you want to download the `index.html`.
-Choose the `/qute-start/` directory and save over the original file.
+
+~~In qutebrowser you simply need to type `gd` to invoke the *download* command with the homepage open in the active tab.~~
+~~A prompt will then ask you to find where you want to download the `index.html`.
+Choose the `/qute-start/` directory and save over the original file.~~
+
+*Note: the above *should* work but resulted in my index.html being cleared completely.*
 
 This functionality might be incorporated as a button in the future if it doesn't clutter the page.
 
