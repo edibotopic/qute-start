@@ -138,17 +138,18 @@
       <hr />
       <b>Contents</b>: <a href="#Tasks"><b>Tasks</b></a> |
       <a href="#Notes"><b>Notes</b></a> |
-      <a href="#Favourites"><b>Favourites</b></a> <!-- | -->
+      <a href="#Favourites"><b>Favourites</b></a>
+      <!-- | -->
 
-      <!-- download functionality BUG: only downloads original state -->
+      <!-- download functionality -->
 
-      <!-- <a -->
-      <!--   id="save" -->
-      <!--   title="download your changes" -->
-      <!--   href="index.html" -->
-      <!--   download="index.html" -->
-      <!--   ><b onclick="confirmDownload()">&#129095;</b></a -->
-      <!-- > -->
+      <a
+        id="saveButton"
+        title="download your changes"
+        href="index.html"
+        download="index.html"
+        ><b>&#129095;</b></a
+      >
       <hr />
 
       <!-- tasks -->
@@ -316,6 +317,28 @@
         hd.appendChild(header_new)
         fv.appendChild(text_new)
         document.getElementById('fav-wrap').appendChild(fv)
+      }
+
+      window.onload = function () {
+        var a = document.getElementById('saveButton')
+        a.onclick = function () {
+          function saveFile(filename, elId, mimeType) {
+            var elHtml = document.getElementById(elId).innerHTML
+            var link = document.createElement('a')
+            mimeType = mimeType || 'text/html'
+            link.setAttribute('download', filename)
+            link.setAttribute(
+              'href',
+              'data:' +
+                mimeType +
+                ';charset=utf-8,' +
+                encodeURIComponent(elHtml)
+            )
+            link.click()
+          }
+          var fileName = 'index.html'
+          saveFile(fileName, 'editor', 'text/plain')
+        }
       }
     </script>
   </body>
