@@ -92,6 +92,7 @@ Shown with **lightmode** enabled in browser and **edited text** (title, tasks) t
 - [ ] Add instructions for setting defaults in different browsers
 - [ ] Test download page functionality
 - [ ] Add rich text support
+- [ ] More consistency around editability
 - [ ] Theme support
 - [ ] Updated images to capture latest changes
 - [ ] Consider a readme .gif
