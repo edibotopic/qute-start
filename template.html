@@ -67,17 +67,21 @@
         border-radius: 25%;
       }
 
-      #save {
+      #saveButton {
         color: black;
         text-decoration: none;
         font-size: 8pt;
         transition-duration: 400ms;
       }
 
-      #save:hover {
+      #saveButton:hover {
         color: black;
         text-decoration: none;
         font-size: 10pt;
+      }
+
+      [contenteditable]:focus {
+        outline: 0px solid transparent;
       }
 
       .box {
@@ -101,9 +105,12 @@
   <body spellcheck="false">
     <!-- welcome message -->
 
-    <div style="max-width: 99vw; width: 820px; margin: auto; padding: 12px">
-      <div>
-        <h1 id="welcome" contenteditable>Title of your Startpage</h1>
+    <div
+      id="main"
+      style="max-width: 99vw; width: 820px; margin: auto; padding: 12px"
+    >
+      <div id="welcome" contenteditable>
+        <h1>Title of your Startpage</h1>
       </div>
 
       <!-- quote -->
@@ -129,35 +136,33 @@
         ><br />
       </p>
 
-      <!-- other content -->
+      <!-- content -->
 
       <p id="toc"></p>
       <hr />
       <b>Contents</b>: <a href="#Tasks"><b>Tasks</b></a> |
       <a href="#Notes"><b>Notes</b></a> |
       <a href="#Favourites"><b>Favourites</b></a>
-      <!-- | -->
+      |
 
-      <!-- download functionality BUG: only downloads original state -->
+      <!-- download info -->
 
-      <!-- <a -->
-      <!--   id="save" -->
-      <!--   title="download your changes" -->
-      <!--   href="index.html" -->
-      <!--   download="index.html" -->
-      <!--   ><b onclick="confirmDownload()">&#129095;</b></a -->
-      <!-- > -->
+      <a id="saveButton" title="download instructions" href="#"
+        ><b>&#129095;</b></a
+      >
       <hr />
 
       <!-- tasks -->
 
-      <h3 id="Tasks">&#9640; Tasks</h3>
-      <ul id="tasklist" contenteditable>
-        <li><strong>Writing</strong>: a writing task</li>
-        <li><strong>Social</strong>: a social task</li>
-        <li><strong>Projects</strong>: task related to a project</li>
-        <li><strong>Development</strong>: task related to programming</li>
-      </ul>
+      <div id="task-wrap" contenteditable>
+        <h3 id="Tasks">&#9640; Tasks</h3>
+        <ul id="tasklist">
+          <li><strong>Writing</strong>: a writing task</li>
+          <li><strong>Social</strong>: a social task</li>
+          <li><strong>Projects</strong>: task related to a project</li>
+          <li><strong>Development</strong>: task related to programming</li>
+        </ul>
+      </div>
       <button type="button" onclick="newTask()">+</button>
 
       <!-- notes -->
@@ -244,23 +249,36 @@
 
       <button type="button" onclick="newFav()">+</button>
     </div>
-    <script>
-      const editables = document.querySelectorAll('[contenteditable]')
 
+    <script async>
+      const editables = document.querySelectorAll('[contenteditable]')
       editables.forEach((el) => {
-        el.addEventListener('blur', () => {
+        el.addEventListener('keyup', () => {
           localStorage.setItem('dataStorage-' + el.id, el.innerHTML)
         })
       })
-
-      // once on load
       for (var key in localStorage) {
         if (key.includes('dataStorage-')) {
           const id = key.replace('dataStorage-', '')
           document.querySelector('#' + id).innerHTML = localStorage.getItem(key)
         }
       }
+    </script>
 
+    <script async>
+      setTimeout(function () {
+        let cursor = document.getElementById('welcome')
+        let selection = window.getSelection()
+        let range = document.createRange()
+        selection.removeAllRanges()
+        range.selectNodeContents(cursor)
+        range.collapse(false)
+        selection.addRange(range)
+        cursor.focus()
+      }, 0)
+    </script>
+
+    <script async>
       function newTask() {
         const tk = document.createElement('li')
         tk.innerHTML = '<strong>Task</strong>: nature of the new task'
@@ -287,6 +305,13 @@
         hd.appendChild(header_new)
         fv.appendChild(text_new)
         document.getElementById('fav-wrap').appendChild(fv)
+      }
+    </script>
+
+    <script async>
+      let saver = document.getElementById('saveButton')
+      saver.onclick = function () {
+        saver.textContent = 'Save with `CTRL+S` in Chrome or Firefox'
       }
     </script>
   </body>

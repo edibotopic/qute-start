@@ -67,23 +67,27 @@
         border-radius: 25%;
       }
 
-      #save {
+      #saveButton {
         color: black;
         text-decoration: none;
         font-size: 8pt;
         transition-duration: 400ms;
       }
 
-      #save:hover {
+      #saveButton:hover {
         color: black;
         text-decoration: none;
         font-size: 10pt;
       }
 
+      [contenteditable]:focus {
+        outline: 0px solid transparent;
+      }
+
       .box {
         display: block;
         break-inside: avoid;
-        width: 90%%;
+        width: 90%;
         padding: 16px;
         margin-top: 16px;
         margin-bottom: 24px;
@@ -101,9 +105,10 @@
   <body spellcheck="false">
     <!-- welcome message -->
 
-    <div style="max-width: 99vw; width: 820px; margin: auto; padding: 12px">
-      <div>
-        <h1 id="welcome" contenteditable>This is the Internet</h1>
+    <div id="main" style="max-width: 99vw; width: 820px; margin: auto; padding: 12px">
+
+      <div id="welcome" contenteditable>
+        <h1>This is the Internet</h1>
       </div>
 
       <!-- quote -->
@@ -132,40 +137,42 @@
         ><br />
       </p>
 
-      <!-- other content -->
+      <!-- content -->
 
       <p id="toc"></p>
       <hr />
       <b>Contents</b>: <a href="#Tasks"><b>Tasks</b></a> |
       <a href="#Notes"><b>Notes</b></a> |
       <a href="#Favourites"><b>Favourites</b></a>
-      <!-- | -->
+      |
 
-      <!-- download functionality -->
+      <!-- download info -->
 
-      <a
-        id="saveButton"
-        title="download your changes"
-        href="index.html"
-        download="index.html"
+      <a href="#" id="saveButton" title="download instructions"
         ><b>&#129095;</b></a
       >
       <hr />
 
       <!-- tasks -->
 
-      <h3 id="Tasks">&#9640; Tasks</h3>
-      <ul id="tasklist" contenteditable>
-        <li>
-          <strong>Writing</strong>: formal methods for multi-phasic systems
-          paper
-        </li>
-        <li><strong>Social</strong>: plan next blogpost for edibotopic.com</li>
-        <li>
-          <strong>Projects</strong>: 3D printing budget for August/September
-        </li>
-        <li><strong>Development</strong>: Push repo for this start/tab page</li>
-      </ul>
+      <div id="task-wrap" contenteditable>
+        <h3 id="Tasks">&#9640; Tasks</h3>
+        <ul id="tasklist">
+          <li>
+            <strong>Writing</strong>: formal methods for multi-phasic systems
+            paper
+          </li>
+          <li>
+            <strong>Social</strong>: plan next blogpost for edibotopic.com
+          </li>
+          <li>
+            <strong>Projects</strong>: 3D printing budget for August/September
+          </li>
+          <li>
+            <strong>Development</strong>: Push repo for this start/tab page
+          </li>
+        </ul>
+      </div>
       <button type="button" onclick="newTask()">+</button>
 
       <!-- notes -->
@@ -274,23 +281,36 @@
 
       <button type="button" onclick="newFav()">+</button>
     </div>
-    <script>
-      const editables = document.querySelectorAll('[contenteditable]')
 
+    <script async>
+      const editables = document.querySelectorAll('[contenteditable]')
       editables.forEach((el) => {
-        el.addEventListener('blur', () => {
+        el.addEventListener('keyup', () => {
           localStorage.setItem('dataStorage-' + el.id, el.innerHTML)
         })
       })
-
-      // once on load
       for (var key in localStorage) {
         if (key.includes('dataStorage-')) {
           const id = key.replace('dataStorage-', '')
           document.querySelector('#' + id).innerHTML = localStorage.getItem(key)
         }
       }
+    </script>
 
+    <script async>
+      setTimeout(function () {
+        let cursor = document.getElementById('welcome')
+        let selection = window.getSelection()
+        let range = document.createRange()
+        selection.removeAllRanges()
+        range.selectNodeContents(cursor)
+        range.collapse(false)
+        selection.addRange(range)
+        cursor.focus()
+      }, 0)
+    </script>
+
+    <script async>
       function newTask() {
         const tk = document.createElement('li')
         tk.innerHTML = '<strong>Task</strong>: nature of the new task'
@@ -318,27 +338,13 @@
         fv.appendChild(text_new)
         document.getElementById('fav-wrap').appendChild(fv)
       }
+    </script>
 
-      window.onload = function () {
-        var a = document.getElementById('saveButton')
-        a.onclick = function () {
-          function saveFile(filename, elId, mimeType) {
-            var elHtml = document.getElementById(elId).innerHTML
-            var link = document.createElement('a')
-            mimeType = mimeType || 'text/html'
-            link.setAttribute('download', filename)
-            link.setAttribute(
-              'href',
-              'data:' +
-                mimeType +
-                ';charset=utf-8,' +
-                encodeURIComponent(elHtml)
-            )
-            link.click()
-          }
-          var fileName = 'index.html'
-          saveFile(fileName, 'editor', 'text/plain')
-        }
+    <script async>
+      let saver = document.getElementById('saveButton')
+      saver.onclick = function () {
+        saver.textContent =
+          'Save with `CTRL+S` in Chrome or Firefox'
       }
     </script>
   </body>
