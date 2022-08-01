@@ -9,7 +9,7 @@ Developed primarily for use with [qutebrowser](https://qutebrowser.org/) but has
 ## Features
 
 - Minimal text-based interface
-- Live-editable text (_mostly_) with rich editing (bold, italic)
+- Live-editable text (_mostly_)
 - Buttons to add new notes and tasks
 - Quote, links, tasks and favourites sections as default
 
@@ -29,7 +29,7 @@ c.url.default_page = 'file:///home/user/yourpathto/qute-start/index.html'
 c.url.start_pages = 'file:///home/user/yourpathto/qute-start/index.html'
 ```
 
-*Note: it should be possible to do something similar on other browsers but I have not checked in detail.*
+*Note: it should be possible to do something very similar on other browsers but I have not checked in detail.*
 
 The `index.html` is **my** homepage and you will want to customise it.
 Currently, almost all text can be edited in the browser **except for links**.
@@ -38,29 +38,27 @@ Standard shortcuts for copying/pasting, bolding/italicising, etc., should work a
 
 Buttons are included at the end of the *tasks*, *notes* and *favourites* sections.
 Clicking these buttons will add a correctly formatted element that you can edit.
-Again, you must defocus from this element for the changes to persist.
+(You can also simply copy-paste elements if you wish.)
+Again, you must defocus from any changed element for the changes to persist.
 
-Note: if you want to use keyboard shortcuts on the homepage (e.g., H, J, K, L movement keys in qutebrowser) you must ensure you are not focused on an editable text element.
-Simply click just outside the outline that appears when you are text editing and it should work fine.
+*Note: if you want to use keyboard shortcuts on the homepage (e.g., H, J, K, L movement keys in qutebrowser) you must ensure you are not focused on an editable text element.*
 
 You will probably want to create your own page from scratch, however.
 If so, delete mine and rename `template.html` to `index.html`.
-Edit the `index.html` to add different links, styles, etc.
+This will give you a skeleton startpage with placeholder text.
+Edit the new `index.html` to add different links, styles, etc.
 
 ## Warning
 
 I wouldn't advise relying on local storage for highly sensitive notes.
 
-For security, you can periodically `save as` the webpage over the `index.html` to make the changes permanent.
+For security, it might be preferable to `save as` the webpage periodically and replace the `index.html` to make the changes permanent.
 
-~~In qutebrowser you simply need to type `gd` to invoke the *download* command with the homepage open in the active tab.~~
+~~In qutebrowser you can type `gd` to invoke the *download* command with the homepage open in the active tab.~~
 ~~A prompt will then ask you to find where you want to download the `index.html`.
 Choose the `/qute-start/` directory and save over the original file.~~
 
-*Note: the above *should* work but resulted in my index.html being cleared completely first time around.
-I have since tested again and it worked perfectly, so will try a few more times before recommending.*
-
-This functionality might be incorporated as a button in the future if it doesn't clutter the page.
+**I'm not sure yet if this preserves local changes** and the functionality might be incorporated as a button in the future if it doesn't clutter the page.
 
 ## Limitations
 
@@ -91,5 +89,7 @@ Shown with **lightmode** enabled in browser and **edited text** (title, tasks) t
 
 ## To-do
 
-- [ ] Add instructions for setting in different browsers
-- [ ] Theme support ...?
+- [ ] Add instructions for setting defaults in different browsers
+- [ ] Test download page functionality
+- [ ] Add rich text support
+- [ ] Theme support
