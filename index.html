@@ -36,13 +36,16 @@
       }
 
       a {
-        text-decoration: none;
+        text-decoration: underline;
+        text-decoration-color: transparent;
         color: #222;
         font-weight: bold;
+        transition-duration: 400ms;
       }
 
       a:hover {
         text-decoration: underline;
+        text-decoration-color: black;
       }
 
       p {
@@ -54,6 +57,7 @@
         background-color: lightgrey;
         border: 1px solid black;
         border-radius: 25%;
+        transition-duration: 400ms;
       }
 
       button:hover {
@@ -61,6 +65,19 @@
         background-color: grey;
         border: 1px solid black;
         border-radius: 25%;
+      }
+
+      #save {
+        color: black;
+        text-decoration: none;
+        font-size: 8pt;
+        transition-duration: 400ms;
+      }
+
+      #save:hover {
+        color: black;
+        text-decoration: none;
+        font-size: 10pt;
       }
 
       .box {
@@ -121,29 +138,33 @@
       <hr />
       <b>Contents</b>: <a href="#Tasks"><b>Tasks</b></a> |
       <a href="#Notes"><b>Notes</b></a> |
-      <a href="#Favourites"><b>Favourites</b></a>
+      <a href="#Favourites"><b>Favourites</b></a> <!-- | -->
+
+      <!-- download functionality BUG: only downloads original state -->
+
+      <!-- <a -->
+      <!--   id="save" -->
+      <!--   title="download your changes" -->
+      <!--   href="index.html" -->
+      <!--   download="index.html" -->
+      <!--   ><b onclick="confirmDownload()">&#129095;</b></a -->
+      <!-- > -->
       <hr />
 
       <!-- tasks -->
 
-      <div id="tsk-wrap" contenteditable>
-        <h3 id="Tasks">&#9640; Tasks</h3>
-        <ul id="tasklist">
-          <li>
-            <strong>Writing</strong>: formal methods for multi-phasic systems
-            paper
-          </li>
-          <li>
-            <strong>Social</strong>: plan next blogpost for edibotopic.com
-          </li>
-          <li>
-            <strong>Projects</strong>: 3D printing budget for August/September
-          </li>
-          <li>
-            <strong>Development</strong>: Push repo for this start/tab page
-          </li>
-        </ul>
-      </div>
+      <h3 id="Tasks">&#9640; Tasks</h3>
+      <ul id="tasklist">
+        <li>
+          <strong>Writing</strong>: formal methods for multi-phasic systems
+          paper
+        </li>
+        <li><strong>Social</strong>: plan next blogpost for edibotopic.com</li>
+        <li>
+          <strong>Projects</strong>: 3D printing budget for August/September
+        </li>
+        <li><strong>Development</strong>: Push repo for this start/tab page</li>
+      </ul>
       <button type="button" onclick="newTask()">+</button>
 
       <!-- notes -->
@@ -251,55 +272,51 @@
       </div>
 
       <button type="button" onclick="newFav()">+</button>
-
-      <script>
-        const editables = document.querySelectorAll('[contenteditable]')
-
-        editables.forEach((el) => {
-          el.addEventListener('blur', () => {
-            localStorage.setItem('dataStorage-' + el.id, el.innerHTML)
-          })
-        })
-
-        // once on load
-        for (var key in localStorage) {
-          if (key.includes('dataStorage-')) {
-            const id = key.replace('dataStorage-', '')
-            document.querySelector('#' + id).innerHTML =
-              localStorage.getItem(key)
-          }
-        }
-
-        function newTask() {
-          const tk = document.createElement('li')
-          // const text_new = document.createTextNode('<b>This</b> is a new task')
-          tk.innerHTML = '<b>Task Type</b>: nature of the new task'
-          // tk.appendChild(text_new)
-          document.getElementById('tasklist').appendChild(tk)
-        }
-
-        function newNote() {
-          const nt = document.createElement('div')
-          const hd = document.createElement('h2')
-          const header_new = document.createTextNode('Note Header')
-          const text_new = document.createTextNode('Text for new note...')
-          nt.appendChild(hd)
-          hd.appendChild(header_new)
-          nt.appendChild(text_new)
-          document.getElementById('notes').appendChild(nt)
-        }
-
-        function newFav() {
-          const fv = document.createElement('div')
-          const hd = document.createElement('h4')
-          const header_new = document.createTextNode('■ Fav Header')
-          const text_new = document.createTextNode('Text for new favourite...')
-          fv.appendChild(hd)
-          hd.appendChild(header_new)
-          fv.appendChild(text_new)
-          document.getElementById('fav-wrap').appendChild(fv)
-        }
-      </script>
     </div>
+    <script>
+      const editables = document.querySelectorAll('[contenteditable]')
+
+      editables.forEach((el) => {
+        el.addEventListener('blur', () => {
+          localStorage.setItem('dataStorage-' + el.id, el.innerHTML)
+        })
+      })
+
+      // once on load
+      for (var key in localStorage) {
+        if (key.includes('dataStorage-')) {
+          const id = key.replace('dataStorage-', '')
+          document.querySelector('#' + id).innerHTML = localStorage.getItem(key)
+        }
+      }
+
+      function newTask() {
+        const tk = document.createElement('li')
+        tk.innerHTML = '<strong>Task</strong>: nature of the new task'
+        document.getElementById('tasklist').appendChild(tk)
+      }
+
+      function newNote() {
+        const nt = document.createElement('div')
+        const hd = document.createElement('h2')
+        const header_new = document.createTextNode('Note Header')
+        const text_new = document.createTextNode('Text for new note...')
+        nt.appendChild(hd)
+        hd.appendChild(header_new)
+        nt.appendChild(text_new)
+        document.getElementById('notes').appendChild(nt)
+      }
+
+      function newFav() {
+        const fv = document.createElement('div')
+        const hd = document.createElement('h4')
+        const header_new = document.createTextNode('■ Fav Header')
+        const text_new = document.createTextNode('Text for new favourite...')
+        fv.appendChild(hd)
+        hd.appendChild(header_new)
+        fv.appendChild(text_new)
+        document.getElementById('fav-wrap').appendChild(fv)
+      }
+    </script>
   </body>
 </html>
