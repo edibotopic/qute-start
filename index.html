@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- title appearing in tab -->
+    <title>~</title>
+
     <!-- page styles -->
 
     <style type="text/css">
@@ -104,8 +110,10 @@
   <body spellcheck="false">
     <!-- welcome message -->
 
-    <div id="main" style="max-width: 99vw; width: 820px; margin: auto; padding: 12px">
-
+    <div
+      id="main"
+      style="max-width: 99vw; width: 820px; margin: auto; padding: 12px"
+    >
       <div id="welcome" contenteditable="">
         <h1>This is the Internet</h1>
       </div>
@@ -114,37 +122,55 @@
 
       <div>
         <p id="quotes" contenteditable="">
-          "I'm going to try speaking some reckless words"<br>
-          - Zhuangzi<br>
+          "I'm going to try speaking some reckless words"<br />
+          - Zhuangzi<br />
         </p>
       </div>
 
       <!-- links -->
 
       <p id="links" title="links must be edited in source file" class="box">
-        <span id="lnks-title" content="" editable="">Places:</span><br>
-        &nbsp;<br>
+        <span id="lnks-title" content="" editable="">Places:</span><br />
+        &nbsp;<br />
         &nbsp; edibotopic |
-        <a href="https://www.edibotopic.com/">https://www.edibotopic.com</a><br>
+        <a href="https://www.edibotopic.com/">https://www.edibotopic.com</a
+        ><br />
         &nbsp; hackernews |
-        <a href="https://news.ycombinator.com/">https://news.ycombinator.com</a><br>
-        &nbsp; GitHub | <a href="https://github.com/">https://github.com</a><br>
-        &nbsp; Youtube | <a href="http://youtube.com/">http://youtube.com</a><br>
+        <a href="https://news.ycombinator.com/">https://news.ycombinator.com</a
+        ><br />
+        &nbsp; GitHub | <a href="https://github.com/">https://github.com</a
+        ><br />
+        &nbsp; Youtube | <a href="http://youtube.com/">http://youtube.com</a
+        ><br />
       </p>
 
       <!-- content -->
 
       <p id="toc"></p>
-      <hr>
-      <b>Contents</b>: <a href="file:///home/edibotopic/Dev/qute-start/index.html#Tasks"><b>Tasks</b></a> |
-      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Notes"><b>Notes</b></a> |
-      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Favourites"><b>Favourites</b></a>
+      <hr />
+      <b>Contents</b>:
+      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Tasks"
+        ><b>Tasks</b></a
+      >
+      |
+      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Notes"
+        ><b>Notes</b></a
+      >
+      |
+      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Favourites"
+        ><b>Favourites</b></a
+      >
       |
 
       <!-- download info -->
 
-      <a href="file:///home/edibotopic/Dev/qute-start/index.html#" id="saveButton" title="download instructions"><b>🡇</b></a>
-      <hr>
+      <a
+        href="file:///home/edibotopic/Dev/qute-start/index.html#"
+        id="saveButton"
+        title="download instructions"
+        ><b>🡇</b></a
+      >
+      <hr />
 
       <!-- tasks -->
 
@@ -156,10 +182,16 @@
             paper
           </li>
           <li>
-            <strong>Social</strong>: finish blogposts on plagiarism and music</li>
+            <strong>Social</strong>: finish blogposts on plagiarism and music
+          </li>
           <li>
-            <strong>Projects</strong>: 3D printing budget for August/September</li>
-        <li><strong>Office</strong>: print ethics book samples to review for publisher</li></ul>
+            <strong>Projects</strong>: 3D printing budget for August/September
+          </li>
+          <li>
+            <strong>Office</strong>: print ethics book samples to review for
+            publisher
+          </li>
+        </ul>
       </div>
       <button type="button" onclick="newTask()">+</button>
 
@@ -168,7 +200,8 @@
       <div id="notes" contenteditable="">
         <h1 id="Notes"><span style="font-size: 30pt">➀</span> Notes</h1>
 
-        <div style="
+        <div
+          style="
             display: inline-block;
             float: left;
             position: relative;
@@ -176,10 +209,12 @@
             top: 5px;
             font-size: 16pt;
             background-color: #fff;
-          ">
+          "
+        >
           ⓘ
         </div>
-        <p style="
+        <p
+          style="
             width: 90%;
             padding: 16px;
             border-width: 2px;
@@ -187,15 +222,18 @@
             border-style: dashed;
             border-color: #aaa;
             background-color: #fff;
-          ">
+          "
+        >
           Add things you want to be reminded of while browsing.
         </p>
 
         <h2 id="_n1">Solo-authored Papers</h2>
-        <p>Add section to website for working papers</p><p>Restrict to solo-authored works in decent shape</p>
+        <p>Add section to website for working papers</p>
+        <p>Restrict to solo-authored works in decent shape</p>
 
         <h2 id="_n2">GitHub Repos</h2>
-        <p>Need to revisit DSF and CookLang repos</p><p>Can tie in results with papers on adjacent topics</p>
+        <p>Need to revisit DSF and CookLang repos</p>
+        <p>Can tie in results with papers on adjacent topics</p>
       </div>
 
       <button type="buttton" onclick="newNote()">+</button>
@@ -206,7 +244,8 @@
           <span style="font-size: 30pt">➁</span> Favourites
         </h1>
 
-        <div style="
+        <div
+          style="
             display: inline-block;
             float: left;
             position: relative;
@@ -214,11 +253,13 @@
             top: 5px;
             font-size: 16pt;
             background-color: #fff;
-          ">
+          "
+        >
           ⓘ
         </div>
 
-        <p style="
+        <p
+          style="
             width: 90%;
             padding: 16px;
             border-width: 2px;
@@ -226,11 +267,14 @@
             border-style: dashed;
             border-color: #aaa;
             background-color: #fff;
-          ">
+          "
+        >
           Add some favourite internet things, places and people here.
         </p>
 
-        <a href="file:///home/edibotopic/Dev/qute-start/index.html#%20f1"><h4 id="_f1">■ Non-anglosphere newspapers</h4></a>
+        <a href="file:///home/edibotopic/Dev/qute-start/index.html#%20f1"
+          ><h4 id="_f1">■ Non-anglosphere newspapers</h4></a
+        >
         <p>
           Useful to get a different perspective than dominant voices in the US
           and UK.
@@ -238,7 +282,8 @@
         <p>
           Some, such as the German papers Zeit and der Spiegel have translated
           versions.
-        </p>Example: https://www.spiegel.de/international/<br>
+        </p>
+        Example: https://www.spiegel.de/international/<br />
       </div>
 
       <button type="button" onclick="newFav()">+</button>
@@ -305,10 +350,8 @@
     <script async="">
       let saver = document.getElementById('saveButton')
       saver.onclick = function () {
-        saver.textContent =
-          'Save with `CTRL+S` in Chrome or Firefox'
+        saver.textContent = 'Save with `CTRL+S` in Chrome or Firefox'
       }
     </script>
-  
-
-</body></html>
+  </body>
+</html>
