@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- page styles -->
 
     <style type="text/css">
@@ -107,81 +106,69 @@
 
     <div id="main" style="max-width: 99vw; width: 820px; margin: auto; padding: 12px">
 
-      <div id="welcome" contenteditable>
+      <div id="welcome" contenteditable="">
         <h1>This is the Internet</h1>
       </div>
 
       <!-- quote -->
 
       <div>
-        <p id="quotes" contenteditable>
-          "I'm going to try speaking some reckless words"<br />
-          - Zhuangzi<br />
+        <p id="quotes" contenteditable="">
+          "I'm going to try speaking some reckless words"<br>
+          - Zhuangzi<br>
         </p>
       </div>
 
       <!-- links -->
 
       <p id="links" title="links must be edited in source file" class="box">
-        <span id="lnks-title" content editable>Places:</span><br />
-        &nbsp;<br />
+        <span id="lnks-title" content="" editable="">Places:</span><br>
+        &nbsp;<br>
         &nbsp; edibotopic |
-        <a href="https://www.edibotopic.com">https://www.edibotopic.com</a
-        ><br />
+        <a href="https://www.edibotopic.com/">https://www.edibotopic.com</a><br>
         &nbsp; hackernews |
-        <a href="https://news.ycombinator.com">https://news.ycombinator.com</a
-        ><br />
-        &nbsp; GitHub | <a href="https://github.com">https://github.com</a
-        ><br />
-        &nbsp; Youtube | <a href="http://youtube.com/">http://youtube.com</a
-        ><br />
+        <a href="https://news.ycombinator.com/">https://news.ycombinator.com</a><br>
+        &nbsp; GitHub | <a href="https://github.com/">https://github.com</a><br>
+        &nbsp; Youtube | <a href="http://youtube.com/">http://youtube.com</a><br>
       </p>
 
       <!-- content -->
 
       <p id="toc"></p>
-      <hr />
-      <b>Contents</b>: <a href="#Tasks"><b>Tasks</b></a> |
-      <a href="#Notes"><b>Notes</b></a> |
-      <a href="#Favourites"><b>Favourites</b></a>
+      <hr>
+      <b>Contents</b>: <a href="file:///home/edibotopic/Dev/qute-start/index.html#Tasks"><b>Tasks</b></a> |
+      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Notes"><b>Notes</b></a> |
+      <a href="file:///home/edibotopic/Dev/qute-start/index.html#Favourites"><b>Favourites</b></a>
       |
 
       <!-- download info -->
 
-      <a href="#" id="saveButton" title="download instructions"
-        ><b>&#129095;</b></a
-      >
-      <hr />
+      <a href="file:///home/edibotopic/Dev/qute-start/index.html#" id="saveButton" title="download instructions"><b>🡇</b></a>
+      <hr>
 
       <!-- tasks -->
 
-      <div id="task-wrap" contenteditable>
-        <h3 id="Tasks">&#9640; Tasks</h3>
+      <div id="task-wrap" contenteditable="">
+        <h3 id="Tasks">▨ Tasks</h3>
         <ul id="tasklist">
           <li>
             <strong>Writing</strong>: formal methods for multi-phasic systems
             paper
           </li>
           <li>
-            <strong>Social</strong>: plan next blogpost for edibotopic.com
-          </li>
+            <strong>Social</strong>: finish blogposts on plagiarism and music</li>
           <li>
-            <strong>Projects</strong>: 3D printing budget for August/September
-          </li>
-          <li>
-            <strong>Development</strong>: Push repo for this start/tab page
-          </li>
-        </ul>
+            <strong>Projects</strong>: 3D printing budget for August/September</li>
+        <li><strong>Office</strong>: print ethics book samples to review for publisher</li></ul>
       </div>
       <button type="button" onclick="newTask()">+</button>
 
       <!-- notes -->
 
-      <div id="notes" contenteditable>
-        <h1 id="Notes"><span style="font-size: 30pt">&#x2780;</span> Notes</h1>
+      <div id="notes" contenteditable="">
+        <h1 id="Notes"><span style="font-size: 30pt">➀</span> Notes</h1>
 
-        <div
-          style="
+        <div style="
             display: inline-block;
             float: left;
             position: relative;
@@ -189,12 +176,10 @@
             top: 5px;
             font-size: 16pt;
             background-color: #fff;
-          "
-        >
-          &#9432;
+          ">
+          ⓘ
         </div>
-        <p
-          style="
+        <p style="
             width: 90%;
             padding: 16px;
             border-width: 2px;
@@ -202,40 +187,26 @@
             border-style: dashed;
             border-color: #aaa;
             background-color: #fff;
-          "
-        >
+          ">
           Add things you want to be reminded of while browsing.
         </p>
 
-        <h2 id="_n1">Simple Start Page</h2>
-        <p>
-          Browser extensions for startpages and newtab pages are slow and busy.
-        </p>
-        <p>
-          The basic functionality I need is here but it would be nice to have
-          some extra features.
-        </p>
-        <p>
-          The quotes should be generated from a local database and the notes
-          should be editable as local .txt files.
-        </p>
+        <h2 id="_n1">Solo-authored Papers</h2>
+        <p>Add section to website for working papers</p><p>Restrict to solo-authored works in decent shape</p>
 
-        <h2 id="_n2">Plans for Eleventy Site</h2>
-        <p>The site looks pretty good (except on Qutebrowser!).</p>
-        <p>My immediate goal is to get up a few more blogpots.</p>
-        <p>Then I would like to look at a darkmode and cooklang integration.</p>
+        <h2 id="_n2">GitHub Repos</h2>
+        <p>Need to revisit DSF and CookLang repos</p><p>Can tie in results with papers on adjacent topics</p>
       </div>
 
       <button type="buttton" onclick="newNote()">+</button>
 
       <!-- favourites -->
-      <div id="fav-wrap" contenteditable>
+      <div id="fav-wrap" contenteditable="">
         <h1 id="Favourites">
-          <span style="font-size: 30pt">&#x2781;</span> Favourites
+          <span style="font-size: 30pt">➁</span> Favourites
         </h1>
 
-        <div
-          style="
+        <div style="
             display: inline-block;
             float: left;
             position: relative;
@@ -243,13 +214,11 @@
             top: 5px;
             font-size: 16pt;
             background-color: #fff;
-          "
-        >
-          &#9432;
+          ">
+          ⓘ
         </div>
 
-        <p
-          style="
+        <p style="
             width: 90%;
             padding: 16px;
             border-width: 2px;
@@ -257,12 +226,11 @@
             border-style: dashed;
             border-color: #aaa;
             background-color: #fff;
-          "
-        >
+          ">
           Add some favourite internet things, places and people here.
         </p>
 
-        <a href="# f1"><h4 id="_f1">&#9632; Non-anglosphere newspapers</h4></a>
+        <a href="file:///home/edibotopic/Dev/qute-start/index.html#%20f1"><h4 id="_f1">■ Non-anglosphere newspapers</h4></a>
         <p>
           Useful to get a different perspective than dominant voices in the US
           and UK.
@@ -270,19 +238,13 @@
         <p>
           Some, such as the German papers Zeit and der Spiegel have translated
           versions.
-        </p>
-
-        <a href="# f2"><h4 id="_f2">&#9632; onehundredrabbits</h4></a>
-        <p>Artist-programmer couple who live on a boat and make cool things.</p>
-        <p>
-          Provide a refreshing perspective on sustainable living and computing.
-        </p>
+        </p>Example: https://www.spiegel.de/international/<br>
       </div>
 
       <button type="button" onclick="newFav()">+</button>
     </div>
 
-    <script async>
+    <script async="">
       const editables = document.querySelectorAll('[contenteditable]')
       editables.forEach((el) => {
         el.addEventListener('keyup', () => {
@@ -297,7 +259,7 @@
       }
     </script>
 
-    <script async>
+    <script async="">
       setTimeout(function () {
         let cursor = document.getElementById('welcome')
         let selection = window.getSelection()
@@ -310,7 +272,7 @@
       }, 0)
     </script>
 
-    <script async>
+    <script async="">
       function newTask() {
         const tk = document.createElement('li')
         tk.innerHTML = '<strong>Task</strong>: nature of the new task'
@@ -340,12 +302,13 @@
       }
     </script>
 
-    <script async>
+    <script async="">
       let saver = document.getElementById('saveButton')
       saver.onclick = function () {
         saver.textContent =
           'Save with `CTRL+S` in Chrome or Firefox'
       }
     </script>
-  </body>
-</html>
+  
+
+</body></html>

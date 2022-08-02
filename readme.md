@@ -6,6 +6,8 @@ Made for personal use and sharing across my own computers.
 
 Developed initially for use with [qutebrowser](https://qutebrowser.org/) but has been tested with Chrome and Firefox where it has worked just as well (or better).
 
+In my experience this is most functional on Chrome and works best when using a single browser.
+
 ## Features
 
 - Minimal text-based interface
